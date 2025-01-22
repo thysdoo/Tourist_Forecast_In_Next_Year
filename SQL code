@@ -1,0 +1,42 @@
+-- đếm dòng dữ liệu
+SELECT count(*) 
+FROM `possible-byway-421016.DA04_K300.singapore_tourist_new` 
+LIMIT 10
+-- 96
+
+-- xem vài dòng dữ liệu
+SELECT *
+FROM `possible-byway-421016.DA04_K300.singapore_tourist_new` 
+LIMIT 10
+
+-- CREATE MODEL
+CREATE OR REPLACE MODEL DA04_K300.singapore_tourist_ARIMA
+OPTIONS
+    (model_type='ARIMA_PLUS',
+    TIME_SERIES_TIMESTAMP_COL='Month',
+    TIME_SERIES_DATA_COL='values') 
+AS
+SELECT *
+FROM`possible-byway-421016.DA04_K300.singapore_tourist_new` ;
+
+-- EVALUATE
+SELECT *
+FROM ML.ARIMA_EVALUATE(MODEL DA04_K300.singapore_tourist_ARIMA)
+-- has_drift = true: dữ liệu có xu hướng tuyến tính
+-- log_likelihood: có xu hướng tăng dần qua từng lần học -> model phù hợp 
+-- AIC: có xu hướng giảm dần qua từng lần học -> model phù hợp
+-- variance: có xu hướng giảm dần qua từng lần học -> model phù hợp
+-- seasonal_periods = YEARLY: dữ liệu có tính mùa vụ theo chu kì mỗi năm
+-- has_holiday_effect = false: dữ liệu không bị ảnh hưởng bởi ngày lễ
+-- has_spikes_and_dips = false: dữ liệu không bị tăng giảm đột biến
+-- has_step_changes = false: dữ liệu không bị thay đổi bước
+-- error_message = null: dữ liệu không bị lỗi
+
+-- COEFFICIENTS
+SELECT *
+FROM ML.ARIMA_COEFFICIENTS(MODEL DA04_K300.singapore_tourist_ARIMA)
+
+-- EXPLAIN FORECAST
+SELECT *
+FROM ML.EXPLAIN_FORECAST(MODEL DA04_K300.singapore_tourist_ARIMA,
+                STRUCT(12 as horizon, 0.8 as confidence_level));
