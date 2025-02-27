@@ -10,12 +10,19 @@ Mục tiêu là xây dựng mô hình dự báo chính xác dựa trên dữ li�
 ## 📁 Cấu trúc thư mục  
 
 tourist_forecast_project/ 
+
 │── EDA by python.ipynb: Phân tích dữ liệu khám phá (EDA) và kiểm tra dữ liệu trước khi đưa vào mô hình
+
 │── Tourist forecast result visualization.ipynb: Trực quan hóa kết quả dự báo và so sánh với dữ liệu thực tế
+
 │── SQL code/: Chứa mã SQL được sử dụng để truy vấn dữ liệu
+
 │── EDA data.csv: Dữ liệu đã xử lý và làm sạch sau bước phân tích khám phá
+
 │── data.csv: Dữ liệu gốc trước khi tiền xử lý
+
 │── Forecast result.csv: Kết quả dự báo số lượng khách du lịch trong 12 tháng tiếp theo
+
 │── README.md: Tài liệu mô tả dự án
 
 ---
