@@ -33,7 +33,7 @@ tourist_forecast_project/
 - Pandas, NumPy  
 - Scikit-Learn  
 - Matplotlib, Seaborn (Visualization)  
-- ARIMA, Exponential Smoothing (Time Series Forecasting)  
+- ARIMA (Time Series Forecasting)  
 
 ---
 
@@ -50,7 +50,6 @@ tourist_forecast_project/
 ### 3️⃣ Xây dựng mô hình dự báo  
 - Sử dụng các mô hình **Time Series Forecasting** như:  
   - **ARIMA (AutoRegressive Integrated Moving Average)**: Mô hình hóa xu hướng và mùa vụ.  
-  - **Exponential Smoothing (Holt-Winters)**: Nắm bắt tốt thành phần xu hướng và mùa vụ.  
 - Đánh giá mô hình qua các chỉ số **RMSE (Root Mean Square Error)** và **MAE (Mean Absolute Error)**.  
 
 ### 4️⃣ Đánh giá và trực quan hóa kết quả  
