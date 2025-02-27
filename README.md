@@ -1,36 +1,60 @@
-# Tourist_Forecast_In_Next_Year
+# 📌 Dự báo Lượng Khách Du Lịch  
+**Python, SQL, Machine Learning**  
 
-**Objective**:
-Predict the number of tourists visiting Singapore for the next 12 months using the singapore_tourist_new.csv dataset.
+## 📌 Mô tả dự án  
+Dự án này nhằm dự báo số lượng khách du lịch đến Singapore trong 12 tháng tới bằng cách sử dụng dữ liệu từ tập `singapore_tourist_new.csv`.  
+Mục tiêu là xây dựng mô hình dự báo chính xác dựa trên dữ liệu lịch sử để hỗ trợ lập kế hoạch du lịch và quản lý tài nguyên.  
 
-**Contributions**:	
-- Exploratory Data Analysis (EDA):
-Libraries used: Pandas, NumPy, Matplotlib, Seaborn.
-Insights:
-The dataset does not have duplicates, missing values, or outliers.
-The line plot revealed that the number of tourists shows clear seasonal patterns with peaks and troughs at regular intervals, indicating seasonal behavior.
-Key features identified from EDA:
-Trend: The data shows an overall increasing trend in tourist numbers over time;
-Seasonality: Clear seasonal patterns with peaks and troughs at regular intervals suggest the presence of seasonal effects;
-Resid (Residuals): There is some noise in the data, but the noise level is relatively low.
+---
 
-- Data Preprocessing:
-Handled missing values (none detected) and ensured the data was clean and ready for modeling.
-Applied necessary transformations (e.g., differencing) to stabilize variance and achieve stationarity where required.
-Model Building and Evaluation:
-Used Time Series Forecasting models including:
-ARIMA (AutoRegressive Integrated Moving Average): Modeled the trend and seasonality in the data;
-Exponential Smoothing (Holt-Winters): Applied to capture the seasonal and trend components effectively;
-Evaluated models using RMSE (Root Mean Square Error) and MAE (Mean Absolute Error) for accuracy in predicting future values.
-Forecasted the number of tourists for the next 12 months, achieving a RMSE of X and an MAE of Y.
+## 📁 Cấu trúc thư mục  
 
-- Evaluation and Insights:
-Key insights: The data demonstrates a clear seasonal pattern with higher tourist numbers in certain months, likely due to holidays and events. The forecast for the next 12 months indicates a continued steady increase in tourist arrivals, with seasonal peaks.
-The model’s ability to capture trend and seasonality will aid in planning for marketing and infrastructure requirements.
+tourist_forecast_project/ 
+│── EDA by python.ipynb: Phân tích dữ liệu khám phá (EDA) và kiểm tra dữ liệu trước khi đưa vào mô hình
+│── Tourist forecast result visualization.ipynb: Trực quan hóa kết quả dự báo và so sánh với dữ liệu thực tế
+│── SQL code/: Chứa mã SQL được sử dụng để truy vấn dữ liệu
+│── EDA data.csv: Dữ liệu đã xử lý và làm sạch sau bước phân tích khám phá
+│── data.csv: Dữ liệu gốc trước khi tiền xử lý
+│── Forecast result.csv: Kết quả dự báo số lượng khách du lịch trong 12 tháng tiếp theo
+│── README.md: Tài liệu mô tả dự án
 
-- Visualization and Reporting:
-Created interactive visualizations of actual vs predicted values to showcase the performance of the forecasting models.
-Delivered a structured report summarizing the methodology, evaluation metrics, and forecast insights for stakeholders.
+---
 
-**Tools Used**:
-Python (Jupyter Notebook), Time Series Forecasting (ARIMA, Exponential Smoothing), Visualization (Matplotlib, Seaborn)
+## 🛠️ Công nghệ sử dụng  
+- Python  
+- SQL  
+- Pandas, NumPy  
+- Scikit-Learn  
+- Matplotlib, Seaborn (Visualization)  
+- ARIMA, Exponential Smoothing (Time Series Forecasting)  
+
+---
+
+## 📊 Các bước thực hiện  
+
+### 1️⃣ Phân tích dữ liệu (EDA)  
+- File **EDA by python.ipynb** chứa quá trình khám phá dữ liệu, kiểm tra giá trị khuyết, ngoại lệ và phân tích xu hướng.  
+- Kết quả cho thấy dữ liệu có xu hướng tăng theo thời gian với tính chất mùa vụ rõ ràng.  
+
+### 2️⃣ Tiền xử lý dữ liệu  
+- Kiểm tra và xử lý giá trị thiếu (không có giá trị thiếu trong tập dữ liệu).  
+- Thực hiện các chuyển đổi cần thiết (differencing) để ổn định phương sai và đạt tính dừng.  
+
+### 3️⃣ Xây dựng mô hình dự báo  
+- Sử dụng các mô hình **Time Series Forecasting** như:  
+  - **ARIMA (AutoRegressive Integrated Moving Average)**: Mô hình hóa xu hướng và mùa vụ.  
+  - **Exponential Smoothing (Holt-Winters)**: Nắm bắt tốt thành phần xu hướng và mùa vụ.  
+- Đánh giá mô hình qua các chỉ số **RMSE (Root Mean Square Error)** và **MAE (Mean Absolute Error)**.  
+
+### 4️⃣ Đánh giá và trực quan hóa kết quả  
+- So sánh giá trị thực tế và giá trị dự báo.  
+- File **Tourist forecast result visualization.ipynb** chứa biểu đồ trực quan về sự chênh lệch giữa dự báo và thực tế.  
+
+### 5️⃣ Kết quả dự báo  
+- File **Forecast result.csv** chứa dự báo số lượng khách du lịch trong 12 tháng tiếp theo.  
+
+---
+
+## 📌 Kết quả mô hình  
+📊 **Dự báo cho thấy xu hướng khách du lịch tiếp tục tăng, với các đỉnh theo mùa rơi vào các tháng du lịch cao điểm.**  
+📌 **Chi tiết kết quả được lưu trong file `Forecast result.csv` và có thể xem trực quan trong `Tourist forecast result visualization.ipynb`.**  
